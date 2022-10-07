@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EndTimeBiggest</fullName>
+    <active>true</active>
+    <description>For Bus Route End Time should always be later than Start Time.</description>
+    <errorConditionFormula>StartTime__c   &gt;  EndTime__c</errorConditionFormula>
+    <errorDisplayField>EndTime__c</errorDisplayField>
+    <errorMessage>Start Time is bigger than End Time.</errorMessage>
+</ValidationRule>

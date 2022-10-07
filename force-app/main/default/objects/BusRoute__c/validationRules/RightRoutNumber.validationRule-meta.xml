@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RightRoutNumber</fullName>
+    <active>true</active>
+    <description>Route Number in format &apos;133&apos;, &apos;1A&apos;, &apos;21B&apos; etc. - with digit(s) left, one letter right (letter is optional).</description>
+    <errorConditionFormula>NOT( REGEX( RouteNumber__c , &quot;[0-9]+[a-zA-Z]?&quot;) )</errorConditionFormula>
+    <errorDisplayField>RouteNumber__c</errorDisplayField>
+    <errorMessage>Route Number must be in format  &apos;133&apos;, &apos;1A&apos;, &apos;21B&apos; etc. - with digit(s) left, one letter right (letter is optional).</errorMessage>
+</ValidationRule>
