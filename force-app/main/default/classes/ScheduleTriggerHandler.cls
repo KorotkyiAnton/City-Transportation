@@ -16,7 +16,7 @@ public class ScheduleTriggerHandler {
                 objectsToUpdate.add(new BusRoute__c(
                     Id = sliceAllTimeOfROute[0].BusRoute__c,
                     StartTime__c = sliceAllTimeOfROute[0].Time__c,
-                    EndTime__c = schedules[0].Time__c
+                    EndTime__c = sliceAllTimeOfROute[sliceAllTimeOfROute.size()-1].Time__c
                 ));
                 
                 if(allTimeOfRoute.size() > 1){
@@ -31,7 +31,7 @@ public class ScheduleTriggerHandler {
             }
         }
         
-        try {
+        try { 
             update objectsToUpdate;
         } catch (DmlException e) {
             System.debug('An unexpected error has occurred: ' + e.getMessage());
@@ -40,6 +40,6 @@ public class ScheduleTriggerHandler {
     
     
     public static void onAfterUpdate(List<Schedule__c> schedules) {
-        
+		        
     }
 }
