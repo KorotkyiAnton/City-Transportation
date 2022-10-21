@@ -1,5 +1,5 @@
 public class TransportServices {
-    public void createStop(String name, String address) {
+    public static void createStop(String name, String address) {
         BusStop__c newBusStop = new BusStop__c (
             Name = name,
             Address__c = address
@@ -13,7 +13,7 @@ public class TransportServices {
     }
 
     //create schedule record
-    public void addStopToSchedule(Id busRouteId, Id busStopId, Time timeValue) {
+    public static void addStopToSchedule(Id busRouteId, Id busStopId, Time timeValue) {
         Schedule__c newSchedule = new Schedule__c(
             BusRoute__c = busRouteId,
             BusStop__c = busStopId,
@@ -28,7 +28,7 @@ public class TransportServices {
     }
 
     //update schedule with specific time
-    public void updateScheduleTimes(List<Schedule__c> scheduleTimes) {
+    public static void updateScheduleTimes(List<Schedule__c> scheduleTimes) {
         try {
             update scheduleTimes;
         } catch (DmlException e) {
@@ -37,7 +37,7 @@ public class TransportServices {
     }
 
     //delete bus stop and all related schedules
-    public void deleteBusStop(Id busStopId) {
+    public static void deleteBusStop(Id busStopId) {
         BusStop__c t = new BusStop__c();
         t.Id = busStopId;
 
