@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AuraDefinitionBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <description>System should query all Bus Routes and calculate number of Bus Stops per Bus Route.</description>
+</AuraDefinitionBundle>

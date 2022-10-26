@@ -3,7 +3,7 @@ trigger ScheduleTrigger on Schedule__c (after insert, after update) {
         if(Trigger.isInsert) {
             ScheduleTriggerTestService.onAfterInsert(Trigger.new);
         } else if (Trigger.isUpdate) {
-            ScheduleTriggerTestService.onAfterUpdate(Trigger.old, Trigger.new);
+            ScheduleTriggerTestService.onAfterUpdate(Trigger.oldMap, Trigger.new);
         }
     }
 }

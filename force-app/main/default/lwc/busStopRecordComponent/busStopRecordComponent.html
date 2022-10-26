@@ -1,0 +1,17 @@
+<template>
+    <lightning-badge label="Badge is in progess" class="slds-badge_inverse"></lightning-badge>
+    <div style="height: 300px;">
+        <lightning-datatable
+                key-field="Id"
+                data={schedules.data}
+                columns={columns}>
+        </lightning-datatable>
+    </div>
+    <div style="height: 300px;">
+        <lightning-datatable
+                key-field="Id"
+                data={schedulesV2.data}
+                columns={columns}>
+        </lightning-datatable>
+    </div>
+</template>

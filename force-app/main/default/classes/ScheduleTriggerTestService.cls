@@ -3,10 +3,10 @@ public class ScheduleTriggerTestService {
         ScheduleTriggerHandler.updateBusRouteTime(schedules);
     }
     
-    public static void onAfterUpdate(List<Schedule__c> schedulesOld, List<Schedule__c> schedulesNew) {
+    public static void onAfterUpdate(Map<Id, Schedule__c> schedulesOld, List<Schedule__c> schedulesNew) {
         List<Schedule__c> schedulesToUpdate = new List<Schedule__c>();
         for(Schedule__c schedule: schedulesNew) {
-            if(schedulesOld[schedulesNew.indexOf(schedule)].Time__c != schedule.Time__c) {
+            if (schedule.Time__c != schedulesOld.get(schedule.Id).Time__c) {
                 schedulesToUpdate.add(schedule);
             }
         }
